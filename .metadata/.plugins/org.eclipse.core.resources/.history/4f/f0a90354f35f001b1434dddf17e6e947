@@ -17,6 +17,7 @@ public class Exe8 {
 		System.out.printf("O custo de fábrica do veículo é de R$ %d. Já o custo ao consumidor é de R$ %.2f.", custoFabrica, custoConsumo);
 		
 		scanner.close();
+		
 	}
 	
 }
