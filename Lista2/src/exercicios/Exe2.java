@@ -32,7 +32,7 @@ public class Exe2 {
 			
 		}
 		
-		System.out.println("" + Arrays.toString(lista));
+		System.out.println("\nOrdem crescente: " + Arrays.toString(lista));
 		scanner.close();
 	}
 	
