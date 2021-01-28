@@ -12,7 +12,8 @@ public class Exe4 {
 		Scanner scanner = new Scanner(System.in);
 		int qtd = 0, sexo = 0, personalidade = 0, idade = 0, pessoasCalmas = 0, mulheresNervosas = 0;
 		int homensAgressivos = 0, outrosCalmos = 0, pessoasNervosas40 = 0, pessoasCalmas18 = 0;
-		boolean tentouBurlar = (personalidade > 3 || personalidade < 0) || (sexo > 3 || sexo < 0) || (idade > 120 || idade < 0);
+		
+		boolean tentouBurlar;
 				
 		System.out.println("Insira os dados de acordo com suas características\n");
 		
@@ -26,9 +27,11 @@ public class Exe4 {
 			System.out.print("Qual sua personalidade? ");
 			personalidade = scanner.nextInt();
 			
-			if(tentouBurlar) 
+			tentouBurlar = (personalidade > 3 || personalidade < 0) || (sexo > 3 || sexo < 0) || (idade > 120 || idade < 0);
+			
+			if(tentouBurlar == true) 
 			{
-				System.out.println("Você inseriu dados inválidos, este perfil não será contabilizado.");
+				System.out.println("\nVocê inseriu dados inválidos, este perfil não será contabilizado.\n");
 				continue;
 			}
 			
