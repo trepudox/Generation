@@ -22,7 +22,7 @@ public class Exe2 {
 		{
 			soma += numero;
 		}
-		System.out.println("A média dos dados lançados foi: " + soma / listaDado.length);
+		System.out.println("A média dos valores dos lançamentos foi: " + soma / listaDado.length);
 		
 		for(int numero: listaDado) 
 		{
