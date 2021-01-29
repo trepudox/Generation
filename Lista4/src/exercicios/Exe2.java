@@ -16,7 +16,7 @@ public class Exe2 {
 		{
 			listaDado[i] = random.nextInt(6) + 1;
 		}
-		System.out.println("A sequência dos dados foi a seguinte: " + Arrays.toString(listaDado));
+		System.out.println("A sequência dos valores dos lançamentos do dado foi a seguinte: " + Arrays.toString(listaDado));
 		
 		for(double numero: listaDado) 
 		{
