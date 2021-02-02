@@ -75,10 +75,10 @@ public class Funcionario {
 		ids++;
 	}
 
-	private String formataMoeda(double arg) {
+	private String formataMoeda(double valor) {
 		NumberFormat nf = NumberFormat.getCurrencyInstance();
 		nf.setMinimumFractionDigits(2);
-		return nf.format(arg);
+		return nf.format(valor);
 	}
 
 	public void aumentarSalario(double porcentagem) {
