@@ -58,10 +58,22 @@ public abstract class Pessoa {
 	
 	public void fichaPessoal() 
 	{
-		System.out.println("Nome: " + this.nome);
-		System.out.println("Idade: " + this.idade);
-		System.out.println("Altura: " + this.altura);
-		System.out.println("Peso: " + this.peso);
+		if(this.nome != null) 
+		{
+			System.out.println("Nome: " + this.nome);			
+		}
+		if(this.idade != 0) 
+		{
+			System.out.println("Idade: " + this.idade);			
+		}
+		if(this.altura != 0) 
+		{
+			System.out.println("Altura: " + this.altura);			
+		}
+		if(this.peso != 0) 
+		{
+			System.out.println("Peso: " + this.peso);			
+		} 
 	}
 	
 }
