@@ -49,7 +49,7 @@ public class Funcionario {
 	public int getIdFuncionario() {
 		return idFuncionario;
 	}
-
+	
 	private void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -86,7 +86,6 @@ public class Funcionario {
 		this.salario = salarioAtual * (1 + porcentagem / 100);
 		System.out.println("O salário do funcionário " + this.nome + ", que era de " + formataMoeda(salarioAtual)
 				+ " sofreu um aumento de " + porcentagem + "%, se tornando agora " + formataMoeda(this.salario) + ".");
-
 	}
 
 	public void diminuirSalario(double porcentagem) {
@@ -94,7 +93,6 @@ public class Funcionario {
 		this.salario = salarioAtual * (1 - porcentagem / 100);
 		System.out.println("O salário do funcionário " + this.nome + ", que era de " + formataMoeda(salarioAtual)
 				+ " sofreu um aumento de " + porcentagem + "%, se tornando agora " + formataMoeda(this.salario) + ".");
-
 	}
 
 	public void infoFuncionario() 
