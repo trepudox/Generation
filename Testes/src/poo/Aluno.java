@@ -20,6 +20,7 @@ public class Aluno extends Pessoa {
 		return this.ra;
 	}
 	
+	@Override
 	public void fichaPessoal() 
 	{
 		super.fichaPessoal();
