@@ -4,6 +4,11 @@ public class Aluno extends Pessoa {
 
 	private String ra;
 	
+	public Aluno()
+	{
+		
+	}
+	
 	public Aluno(String nome, int idade, double altura, int peso, String ra) 
 	{
 		super(nome, idade, altura, peso);

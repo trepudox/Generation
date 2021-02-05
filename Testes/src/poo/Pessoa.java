@@ -3,10 +3,15 @@ package poo;
 //Uma classe abstrata não pode ser instanciada, ela serve apenas como base para outras subclasses.
 public abstract class Pessoa {
 	
-	private String nome;
+	public String nome;
 	private int idade;
 	private double altura;
 	private int peso;
+	
+	public Pessoa() 
+	{
+		
+	}
 	
 	public Pessoa(String nome, int idade, double altura, int peso) 
 	{
