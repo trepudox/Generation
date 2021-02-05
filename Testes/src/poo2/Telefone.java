@@ -1,11 +1,12 @@
 package poo2;
 
-public abstract class Telefone {
+public class Telefone implements TelefoneInterface {
 	private String nome;
 	
-	public abstract void printaP();
-	
-	
-	
+	@Override
+	public void printaP() 
+	{
+		System.out.println("C");
+	}
 	
 }

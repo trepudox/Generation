@@ -1,5 +1,9 @@
 package poo2;
 
-public class TelefoneAbstract {
-
+public abstract class TelefoneAbstract {
+	
+	public abstract void printaC();
+	
+	
+	
 }

@@ -2,22 +2,24 @@ package exercicios;
 
 public class Main {
 	public static void main(String[] args) {
-		Cachorro jog = new Cachorro("Jog", 2, "Labrador");
+		Cachorro keylor = new Cachorro("Keylor", 2, "Labrador");
 		
-		jog.correr();
-		jog.emitirSom();
-		jog.fichaAnimal();
+		keylor.fichaAnimal();
+		keylor.correr();
+		keylor.emitirSom();
 		
 		Cavalo jorge = new Cavalo("Jorge", 5, "Preto");
 		
-		jorge.emitirSom();
 		jorge.fichaAnimal();
 		jorge.correr();
+		jorge.emitirSom();
 		
 		Preguica doido = new Preguica("Doido", 6);
 		
-		doido.emitirSom();
 		doido.fichaAnimal();
 		doido.subirArvore();
+		doido.emitirSom();
+		
+		
 	}
 }
