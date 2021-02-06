@@ -104,7 +104,7 @@ public class Main {
 		} 
 		catch(InputMismatchException err1) 
 		{
-			System.out.println("\nPor favor, digite apenas números inteiros quando for escolher sua opção.\nErro: " + err1);
+			System.out.println("\nPor favor, execute o programa novamente e digite apenas números inteiros quando for escolher sua opção.\nErro: " + err1);
 		}
 		catch(Exception err) 
 		{
