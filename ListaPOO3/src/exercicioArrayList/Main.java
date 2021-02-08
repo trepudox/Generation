@@ -95,7 +95,7 @@ public class Main {
 					break;
 					
 				default:
-					System.out.println("\nPor favor, digite apenas de 0 a 4.");
+					System.out.println("Por favor, digite apenas de 0 a 4.\n");
 					break;
 				}
 				
@@ -104,7 +104,8 @@ public class Main {
 		} 
 		catch(InputMismatchException err1) 
 		{
-			System.out.println("\nPor favor, execute o programa novamente e digite apenas números inteiros quando for escolher sua opção.\nErro: " + err1);
+			System.out.println("\nPor favor, execute o programa novamente e digite apenas números inteiros quando for escolher sua opção.");
+			System.err.println("Erro: " + err1);
 		}
 		catch(Exception err) 
 		{
