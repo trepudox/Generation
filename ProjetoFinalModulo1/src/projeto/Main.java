@@ -1,5 +1,10 @@
 package projeto;
 
+/* 1 - Arrumar carros indisponiveis, ainda é possível alugá-los
+ * 2 - Restrição nas entradas
+ * 3 - 
+ * */
+
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -15,13 +20,20 @@ public class Main {
 	public static void alugar(char caso) 
 	{
 		System.out.println("Carros disponíveis:");
-		
+		int contCarro = 0;
 		for(Veiculos v: listaCarros) 
 		{
 			if(v.getCategoria() == caso && v.isDisponivel()) 
 			{
 				System.out.print(" " + v.getModelo() + " |");
+				contCarro++;
 			}
+		}
+		
+		if(contCarro == 0) 
+		{
+			System.err.println("Neste momento não há carros disponíveis nessa categoria, pedimos desculpas pelo inconveniente.");
+			return;
 		}
 		
 		System.out.print("\n\nEscolha o carro desejado: ");
@@ -36,11 +48,16 @@ public class Main {
 				vAux = v;
 			}
 		}
-		
+			
 		int dias, opcaoSeg;
 		String localRet, localEnt;
 		if(vAux != null) 
 		{
+			if(!vAux.isDisponivel()) 
+			{
+				System.err.print("\nEste carro não está disponível no momento.");
+				return;
+			}			
 			System.out.println("\n" + vAux);	
 			System.out.print("\nInforme por quantos dias irá alugar o veículo:  ");
 			dias = scanner.nextInt();
@@ -53,6 +70,12 @@ public class Main {
 			
 			System.out.print("\nDeseja adicionar o seguro? 0 para não e 1 para sim. ");
 			opcaoSeg = scanner.nextInt();
+			while(opcaoSeg < 0 || opcaoSeg > 1) 
+			{
+				System.err.println("\nPor favor digite uma opção válida.");
+				System.out.print("\nDeseja adicionar o seguro? 0 para não e 1 para sim. ");
+				opcaoSeg = scanner.nextInt();
+			}
 			
 			for(Veiculos v: listaCarros) 
 			{
@@ -74,7 +97,7 @@ public class Main {
 		}
 		else 
 		{
-			System.out.println("\nEsse carro não existe nessa categoria!");
+			System.err.print("\nEsse carro não existe nessa categoria!");
 			return;
 		}
 	
@@ -148,9 +171,10 @@ public class Main {
 					
 				case 2:
 					char cat = 65;
+					System.out.println("\n--------------------------------------------");
 					for(int i = 0; i < 4; i++) 
 					{
-						System.out.println("\nCategoria " + cat + ":");
+						System.out.println("Categoria " + cat + ":");
 						for(int j = 0; j < listaCarros.size(); j++) 
 						{
 							if(listaCarros.get(j).getCategoria() == cat && listaCarros.get(j).isDisponivel()) 
@@ -166,6 +190,7 @@ public class Main {
 								System.out.println("\t" + listaCarros.get(k).getFabricante() + " " + listaCarros.get(k).getModelo() + ", indisponível");
 							}
 						}
+						System.out.println("--------------------------------------------");
 	
 						cat++;
 					}
@@ -210,7 +235,7 @@ public class Main {
 					break;
 					
 				default:
-					System.out.println("Selecione uma opção válida.");
+					System.err.println("\nSelecione uma opção válida.\n");
 					break;
 				
 				}
