@@ -32,6 +32,7 @@ public abstract class Veiculos {
 		this.disponivel = disponivel;
 	}
 
+	//TODO
 	@Override
 	public String toString() 
 	{
@@ -98,7 +99,73 @@ public abstract class Veiculos {
 		this.seguro = seguro;
 	}
 	  
+	public String getPlaca() {
+		return placa;
+	}
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	public int getQntd_lugares() {
+		return qntd_lugares;
+	}
+
+	public void setQntd_lugares(int qntd_lugares) {
+		this.qntd_lugares = qntd_lugares;
+	}
+
+	public boolean isBlindado() {
+		return blindado;
+	}
+
+	public void setBlindado(boolean blindado) {
+		this.blindado = blindado;
+	}
+
+	public boolean isAr_condicionado() {
+		return ar_condicionado;
+	}
+
+	public void setAr_condicionado(boolean ar_condicionado) {
+		this.ar_condicionado = ar_condicionado;
+	}
+
+	public boolean isAutomatico() {
+		return automatico;
+	}
+
+	public void setAutomatico(boolean automatico) {
+		this.automatico = automatico;
+	}
+
+	public boolean isAdaptavel() {
+		return adaptavel;
+	}
+
+	public void setAdaptavel(boolean adaptavel) {
+		this.adaptavel = adaptavel;
+	}
+
+	public void setFabricante(String fabricante) {
+		this.fabricante = fabricante;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
 	public abstract double calculaTotal();
+	
+	//TODO
 	public double calculaTaxa() {
 		if(this.local_entrega.equalsIgnoreCase(this.local_retirada)) {
 			return 0;
@@ -107,6 +174,7 @@ public abstract class Veiculos {
 			return 300;
 		}
 	}
+	
 	public abstract double calculaSeguro();
 	
 	public double calculaTotalTotal() {

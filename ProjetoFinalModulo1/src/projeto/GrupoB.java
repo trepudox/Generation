@@ -1,5 +1,7 @@
 package projeto;
 
+import java.util.Scanner;
+
 public class GrupoB extends Veiculos {
 	
 	public GrupoB(String fabricante, String placa, String modelo, int ano, int qntd_lugares, 
@@ -23,4 +25,25 @@ public class GrupoB extends Veiculos {
 			return calculaTotal()*0.15;
 		}
 	}
+	
+	public static GrupoB criaObj() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Digite o fabricante do veículo: ");
+		String fabricante = scanner.nextLine();
+		
+		System.out.print("Digite a placa do veículo: ");
+		 String placa  = scanner.nextLine();
+		
+		System.out.print("Digite o modelo do veículo: ");
+		String modelo = scanner.nextLine();
+		
+		System.out.print("Digite o ano de fabricação do veículo: ");
+		int ano = scanner.nextInt();
+		
+		System.out.print("Digite a quantidade de lugares do veículo: ");
+		int qntd_lugares = scanner.nextInt();
+		
+		return new GrupoB(fabricante, placa, modelo, ano, qntd_lugares, false, true, true, false, true);
+	}
 }
+
