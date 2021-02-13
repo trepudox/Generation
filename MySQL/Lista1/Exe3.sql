@@ -13,7 +13,7 @@ CREATE TABLE tb_alunos(
 
 INSERT INTO tb_alunos(nome, sobrenome, mediaNotas, provasFeitas) VALUES ("Marco Aurelio", "Queiroz", 0, 3),
 ("Rogerio", "Simas", 10, 4), ("Ronaldo", "Nazário", 8.25, 4), ("José Roberto", "Seixas", 9.5, 2), 
-("Rodrigo", "Alberto", 5.5, 3), ("Mauricio", "Souza", 2.5, 5), ("Pedro", "Rodrigues", 8.75, 3),
+("Rodrigo", "Alberto", 5.5, 3), ("Mauricio", "de Souza", 2.5, 5), ("Pedro", "Rodrigues", 8.75, 3),
 ("João", "Roberto", 6.5, 4);
 
 SELECT * FROM tb_alunos;
