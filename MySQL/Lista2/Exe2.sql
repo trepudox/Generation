@@ -49,5 +49,3 @@ WHERE tb_pizza.saborPizza LIKE "C%";
 SELECT tb_categoria.nomeCategoria, tb_pizza.saborPizza, tb_pizza.bordaRecheada, tb_pizza.azeitonas, tb_pizza.tamanho, tb_pizza.preco
 FROM tb_pizza
 INNER JOIN tb_categoria ON tb_pizza.idCategoria = tb_categoria.idCategoria;
-
-
