@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
@@ -14,22 +13,21 @@ import javax.validation.constraints.Size;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="Postagem")
 public class Postagem {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id //Define a Primary Key, vulgo ID
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Auto Incremento para o ID
 	private Long id;
 	
-	@NotNull
-	@Size(min = 2, max = 75)
+	@NotNull //Define que o campo não pode ser nulo
+	@Size(min = 2, max = 75) //Define o tamanho mínimo e tamanho máximo do campo
 	private String titulo;
 	
 	@NotNull
 	@Size(min = 3, max = 500)
 	private String texto;
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) //Define que é um tipo de Tempo
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 
 	public Long getId() {

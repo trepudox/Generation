@@ -19,13 +19,13 @@ import java.util.List;
 
 @RestController //Para indicar que é um controller
 @RequestMapping("/postagens") //O caminho/URI que vai trazer a resposta do método
-@CrossOrigin("*")
+@CrossOrigin("*") //Aceita requisições de diversas origens
 public class PostagemController {
 	
 	@Autowired //Para "instanciar" a interface, para então podermos usá-la. A famosa injeção de dependências.
 	private PostagemRepository repository;
 	
-	@GetMapping("/get")
+	@GetMapping("/all")
 	public ResponseEntity<List<Postagem>> GetAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
