@@ -8,5 +8,11 @@ public class Telefone implements TelefoneInterface {
 	{
 		System.out.println("C");
 	}
+
+	@Override
+	public void printaC() {
+		System.out.println("C");
+		
+	}
 	
 }
