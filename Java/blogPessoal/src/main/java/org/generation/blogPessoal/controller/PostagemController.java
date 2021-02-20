@@ -5,6 +5,7 @@ import org.generation.blogPessoal.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ import java.util.List;
 
 @RestController //Para indicar que é um controller
 @RequestMapping("/postagens") //O caminho/URI que vai trazer a resposta do método
-@CrossOrigin("*") //Aceita requisições de diversas origens
+@CrossOrigin("*") //Aceita conexões de diversas portas
 public class PostagemController {
 	
 	@Autowired //Para "instanciar" a interface, para então podermos usá-la. A famosa injeção de dependências.
@@ -31,14 +32,14 @@ public class PostagemController {
 	}
 	
 	@GetMapping("/get/id/{id}")
-	public ResponseEntity<Postagem> GetById(@PathVariable Long id) { //Essa anotação indica que o ID será passado pela URL.
+	public ResponseEntity<Postagem> GetById(@Validated @PathVariable Long id) { //Essa anotação indica que o ID será passado pela URL.
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	@GetMapping("/get/titulo/{titulo}")
-	public ResponseEntity<List<Postagem>> GetByTitulo(@PathVariable String titulo){ 
+	public ResponseEntity<List<Postagem>> GetByTitulo(@PathVariable String titulo) { 
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
