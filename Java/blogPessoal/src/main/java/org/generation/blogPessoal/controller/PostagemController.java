@@ -7,6 +7,7 @@ import org.generation.blogPessoal.service.PostagemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,12 +45,12 @@ public class PostagemController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Postagem> post(@RequestBody Postagem postagem) {
+	public ResponseEntity<Postagem> post(@Validated @RequestBody Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.criarPostagem(postagem));
 	}
 	
 	@PutMapping
-	public ResponseEntity<Postagem> put(@RequestBody Postagem postagem) {
+	public ResponseEntity<Postagem> put(@Validated @RequestBody Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.atualizarPostagem(postagem));
 	}
 	
