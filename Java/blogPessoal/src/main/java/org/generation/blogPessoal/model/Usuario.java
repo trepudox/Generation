@@ -25,7 +25,7 @@ public class Usuario {
 	private String usuario;
 	
 	@NotNull
-	@Size(min = 8, max = 50, message = "Mínimo de 8 caracteres e máximo de 50")
+	@Size(min = 8, message = "Mínimo de 8 caracteres")
 	private String senha;
 
 	public Long getId() {
