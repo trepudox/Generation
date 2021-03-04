@@ -22,7 +22,7 @@ public class UserDetailsImpl implements UserDetails {
 	public UserDetailsImpl(Usuario user) {
 		this.username = user.getNome();
 		this.password = user.getSenha();
-	} 
+	}
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
