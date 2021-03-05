@@ -25,8 +25,17 @@ public class Usuario {
 	private String usuario;
 	
 	@NotNull
-	@Size(min = 8, message = "Mínimo de 8 caracteres")
+	@Size(min = 5, message = "Mínimo de 5 caracteres")
 	private String senha;
+	
+	public Usuario() {}
+	
+	public Usuario(Long id, String nome, String usuario, String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
 
 	public Long getId() {
 		return id;

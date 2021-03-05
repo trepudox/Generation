@@ -10,7 +10,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -25,15 +28,20 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 	
 	@PostMapping("/logar")
-	public ResponseEntity<UsuarioLogin> Authentication(@RequestBody Optional<UsuarioLogin> user) {
-		return usuarioService.Logar(user).map(resp -> ResponseEntity.status(HttpStatus.OK).body(resp))
+	public ResponseEntity<UsuarioLogin> authentication(@RequestBody Optional<UsuarioLogin> user) {
+		return usuarioService.logar(user).map(resp -> ResponseEntity.status(HttpStatus.OK).body(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Usuario> Post(@Validated @RequestBody Usuario usuario) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
+	public ResponseEntity<Usuario> post(@Validated @RequestBody Usuario user) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.cadastrarUsuario(user));
 	}
 	
-	
+	@GetMapping("/{id}")
+	public ResponseEntity<Usuario> findById(@PathVariable Long id) {
+		Optional<Usuario> user = usuarioService.findById(id);
+		return user.map(u -> ResponseEntity.status(HttpStatus.OK).body(u))
+				.orElse(ResponseEntity.status(HttpStatus.NO_CONTENT).build());
+	}
 }
